@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ISP ONE - An incremental game for winners.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+
+<body onload="loadGame();">
+
+
+    <div class="main">
+
+        <input id="tab0" type="radio" name="tabs" checked style="background: #6A123C;">
+        <label for="tab0">Main</label>
+
+        <input id="tab1" type="radio" name="tabs">
+        <label for="tab1">Upgrades</label>
+
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2">Corporate</label>
+
+        <input id="tab3" type="radio" name="tabs">
+        <label for="tab3">Government</label>
+
+        <input id="tab4" type="radio" name="tabs">
+        <label for="tab4">Achievements</label>
+
+        <input id="tab5" type="radio" name="tabs">
+        <label for="tab5">Settings</label>
+
+        <input id="tab6" type="radio" name="tabs">
+        <label for="tab6">Testing</label>
+        <br>
+
+        <center>
+            <h2>Redeem X <button onclick="changeRedeemAmount();" id="redeemAmount" class="littleBtn" style="font-size: 100%; width: 75px" >1</button> Complaints: <span id="complaints" style="font-size:200%;">0</span></h2><br></center>
+        <div class="content" style="overflow-y: auto; height: 70vh; background: #183035;" align="center">
+
+        <div id="content0" class="firstTab">
+              <button onclick="clickTurbo();" id="complaint" class="bigGreenBtn" style="font-size: 300%; width: 100%" > Throttle Connections! </button> <br> <br> <br>
+
+                <div class="buttonContainer">
+                    <button onclick="buyapology();" id="apol" class="btn">
+              <span id="apologys" class="bigNumbers">0</span> 
+              Script Apology +1<br>
+              <i class="smallerText"> 
+                <span id="apolPerSec" class="biggerText">1</span> 
+                Complaint per second 
+              </i>
+                <br>
+              <b> Complaints Required: </b>
+              <span id="apologysCost">10</span>
+
+            </button>
+
+            <div id="myProgress">
+            <div class="myBar" id="apologyBar"><img src="img/drawing2.png" height="78" width="78"></div>
+                  </div>
+
+
+                </div>
+
+
+                <div class="buttonContainer">
+                    <button onclick="buythrottle();" id="throt" class="btn">
+              <span id="throttle" class="bigNumbers">0</span> 
+              Auto Throttle +2<br>
+              <i class="smallerText">
+              <span id="throtPerSec" class="biggerText"> 2 </span>
+              Complaints per second
+              </i>
+                <br> 
+              <b>Complaints Required:</b> 
+              <span id="throttleCost">200</span>
+            </button>
+
+
+                          <div id="myProgress">
+            <div class="myBar" id="throttleBar"><img src="img/throttle.png" height="78" width="78"></div>
+                  </div>
+
+                </div>
+
+                <div class="buttonContainer">
+                    <button onclick="buySoftDataCap();" id="sdp" class="btn">
+              <span id="softDataCap" class="bigNumbers">0</span> 
+              Soft Data Cap +5<br>
+              <i class="smallerText">
+                <span id="sdpPerSec" class="biggerText">5</span>
+                 Complaints per second
+              </i>
+                <br>
+              <b> Complaints Required: </b>
+              <span id="softDataCapCost">5.000k</span>
+            </button>
+
+              <div id="myProgress">
+            <div class="myBar" id="softDataCapBar"><img src="img/softdata2.png" height="78" width="78"></div>
+                  </div>
+                </div>
+
+                <div class="buttonContainer">
+                    <button onclick="buyHardDataCap();" id="hdp" class="btn">
+              <span id="hardDataCap" class="bigNumbers">0</span>
+              Hard Data Cap +50<br>
+              <i class="smallerText">
+                <span id="hdpPerSec" class="biggerText">50 </span>
+                Complaints per second
+              </i>
+                <br>
+              <b>Complaints Required: </b>
+              <span id="hardDataCapCost">120.000k</span>
+            </button>
+                          <div id="myProgress">
+            <div class="myBar" id="hardDataCapBar"><img src="img/harddata.png" height="78" width="78"></div>
+                  </div>
+                </div>
+
+                <div class="buttonContainer">
+                    <button onclick="buyPhoneBundles();" id="phonebun" class="btn">
+              <span id="phoneBundles" class="bigNumbers">0</span> 
+              Telephone Bundles +125<br>
+             <i class="smallerText">
+              <span id="phoneBundlesPerSec" class="biggerText">125 </span>
+              Complaints per second
+              </i>
+              <br>
+            <b> Complaints Required: </b><span id="phoneBundlesCost">500.000k</span>
+            </button>
+                          <div id="myProgress">
+            <div class="myBar" id="phoneBundleBar"><img src="img/phone.png" height="78" width="78"></div>
+                  </div>
+                </div>
+
+                <div class="buttonContainer">
+                    <button onclick="buyTvBundles();" id="tvbun" class="btn">
+              <span id="tvBundles" class="bigNumbers">0</span> 
+              Television Bundles +1250<br>
+              <i class="smallerText">
+                <span id="tvBundlesPerSec" class="biggerText">1250</span>
+               Complaints per second
+             </i><br>
+            <b>Complaints Required: </b><span id="tvBundlesCost">7.000m</span>
+           </button>
+                         <div id="myProgress">
+            <div class="myBar" id="tvBundleBar"><img src="img/tv.png" height="78" width="78"></div>
+                  </div>
+                </div>
+
+                <div class="buttonContainer">
+                    <button onclick="buyPrioritize();" id="prior" class="btn">
+              <span id="prioritize" class="bigNumbers">0</span> 
+              Prioritize Service +5000<br>
+              <i class="smallerText">
+                  <span id="priorPerSec" class="biggerText">5000</span> 
+                  Complaints per second
+              </i>
+                <br>
+              <b> Complaints Required: </b><span id="prioritizeCost">50.000m</span>
+            </button>
+                          <div id="myProgress">
+            <div class="myBar" id="prioritizeBar"><img src="img/prior.png" height="78" width="78"></div>
+                  </div>
+                </div>
+
+                <div class="buttonContainer">
+                    <button onclick="buyMonopolize();" id="monopol" class="btn">
+              <span id="monopolize" class="bigNumbers">0</span>
+               Monopolize Region +100000<br>
+              <i class="smallerText">
+                <span id="priorPerSec" class="biggerText">100000</span>
+                Complaints per second
+              </i>
+                <br>
+            <b>Complaints Required: </b><span id="monopolizeCost">140.000m</span>
+            </button>
+                          <div id="myProgress">
+            <div class="myBar" id="monopolizeBar"><img src="img/monopoly.png" height="78" width="78"></div>
+                  </div>
+                </div>
+
+                <center><img src="logo.gif" width="40%" height="30%"><br>Early Alpha<br><br>
+                <i>2016 JoeyPhillips v.0.0.7</i>                  
+                </center>
+
+            </div>
+
+            <!--- 
+
+  Upgrades
+
+-->
+
+            <div id="content1" class="firstTab">
+
+                <center>
+
+
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Great Letterheads </b> - <i class="smallerText">  Doubles the CpS of Apology   </i> <br>
+            Complaints Required: <span id="">1000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Extra Bits </b> - <i class="smallerText">   Doubles the CpS of Auto Throttle   </i> <br>
+            Complaints Required: <span id="">5000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Free Email Services </b> - <i class="smallerText"> Doubles the rate of complaints   </i> <br>
+            Complaints Required: <span id="">100k</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Obscure Contracts </b> - <i class="smallerText"> x10 CpS of Hard Data Cap   </i> <br>
+            Complaints Required: <span id="">200k</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Great Letterheads </b> - <i class="smallerText">  Doubles the CpS of Apology   </i> <br>
+            Complaints Required: <span id="">1000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Extra Bits </b> - <i class="smallerText">   Doubles the CpS of Auto Throttle   </i> <br>
+            Complaints Required: <span id="">5000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Free Email Services </b> - <i class="smallerText"> Doubles the rate of complaints   </i> <br>
+            Complaints Required: <span id="">100k</span>
+            </button> <br><br>
+            
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Obscure Contracts </b> - <i class="smallerText"> x10 CpS of Hard Data Cap   </i> <br>
+            Complaints Required: <span id="">200k</span>
+            </button> <br><br>
+
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Great Letterheads </b> - <i class="smallerText">  Doubles the CpS of Apology   </i> <br>
+            Complaints Required: <span id="">1000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Extra Bits </b> - <i class="smallerText">   Doubles the CpS of Auto Throttle   </i> <br>
+            Complaints Required: <span id="">5000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Free Email Services </b> - <i class="smallerText"> Doubles the rate of complaints   </i> <br>
+            Complaints Required: <span id="">100k</span>
+            </button> <br><br>
+            
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Obscure Contracts </b> - <i class="smallerText"> x10 CpS of Hard Data Cap   </i> <br>
+            Complaints Required: <span id="">200k</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Great Letterheads </b> - <i class="smallerText">  Doubles the CpS of Apology   </i> <br>
+            Complaints Required: <span id="">1000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Extra Bits </b> - <i class="smallerText">   Doubles the CpS of Auto Throttle   </i> <br>
+            Complaints Required: <span id="">5000</span>
+            </button> <br><br>
+
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Free Email Services </b> - <i class="smallerText"> Doubles the rate of complaints   </i> <br>
+            Complaints Required: <span id="">100k</span>
+            </button> <br><br>
+            
+                  <button onclick="buyUpdate();" class="upgradeBtn"> <b> Obscure Contracts </b> - <i class="smallerText"> x10 CpS of Hard Data Cap   </i> <br>
+            Complaints Required: <span id="">200k</span>
+            </button> <br><br>
+
+                </center>
+
+            </div>
+
+
+            
+
+            <!--- 
+
+  Corporate
+
+-->
+
+
+
+
+            <div id="content2" class="contentContainer">
+
+
+
+                <h3>Corporate</h3>
+
+
+
+                <h4> <center>
+                <br>
+    <font color="339922">Revenue: <span id="revenue">0</span></font>
+          <br>
+    <font color="FF0000">Expenses: <span id="expenses">0</span></font>
+      <br><br>
+    Reserves: <span id="reserves">10</span>
+ </center><br><br>
+pfft. Corporate accounts... who cares about any of this garbage. We're not here to make money. Profits margins, productivity, market share these are all just a means to the end. Best not to waste too much time on this non-sense. <br>
+
+</h4>
+
+            </div>
+
+
+            <!--- 
+
+ Government
+
+-->
+
+            <div id="content3" class="contentContainer">
+                <h3>Government</h3>
+
+                <br>
+                <button onclick="hireLobbyist();" class="btnTwo" id="hireLob">Hire Lobbyist</button><br>
+                <h4> Lobbyists: <span id="lobbyists">0</span></h4>
+                <br> Complaints Required: <span id="lobbyistCost">Does not work yet</span><br>
+                <br> Lobbyists reduce the cost multiplier added after complaints are redeemed. However, be careful when hiring lobbyists as there is a 1/4 chance you will be sent back in time to your appointment as CEO. Should this happen you will keep your connections to lobbyists but nothing else. <br><br>
+                <center>Your current multiplier is
+                    <h2><span id="multiplier">300</span>%.</h2></center><br>
+            </div>
+
+            <div id="content4" class="contentContainer">
+                <p>
+                    You have earned n Achievements. Adding a tracking option soon ignore below
+
+                    <hr>
+                    <b> Script Kiddie </b>: Script an apology.
+                    <hr>
+                    <b> Lord of Knoobs </b>: Auto Throttle 10 Connections.
+                    <hr>
+                    <b> Soft Served Data </b>: Issue 10 Soft Data Caps. <br>
+                    <hr>
+                    <b> You PAY ME NOW! </b>: 25 Hard Data Caps. <br>
+                    <hr>
+
+
+
+                </p>
+
+            </div>
+
+
+            <div id="content5" class="contentContainer">
+                <p>
+                    <h1>Settings</h1><br>
+                    The following four settings are NOT functional yet.
+<center>
+<div class="container">
+    <div class="row">
+        <div class="column"><h2>Graphics</h2></div>
+        <div class="column"><button onclick="displaySettings(left);" class="littleBtn"> < </button></div>
+        <div class="column"> <h3> <span id="graph">Medium</span> </h3></div>
+        <div class="column"> <button onclick="displaySettings(right);" class="littleBtn"> > </button> </div>
+    </div>
+    <div class="row">
+        <div class="column"><h2>Audio</h2></div>
+        <div class="column"><button onclick="audioSettings(left)" class="littleBtn"> < </button></div>
+        <div class="column"><h3><span id="audio">Off</span></h3> </div>
+        <div class="column"> <button onclick="audioSettings(right)" class="littleBtn"> > </button> </div>
+    </div>
+    <div class="row">
+        <div class="column"><h2>Clock Speed</h2></div>
+        <div class="column"><button onclick="clockSettings(left);" class="littleBtn"> < </button></div>
+        <div class="column"> <h3> <span id="clock">Medium</span> </h3></div>
+        <div class="column"> <button onclick="clockSettings(right);" class="littleBtn"> > </button> </div>
+    </div>
+    <div class="row">
+        <div class="column"><h2>Autosave</h2></div>
+        <div class="column"><button onclick="saveSettings(left)" class="littleBtn"> < </button></div>
+        <div class="column"><h3><span id="save">Off</span></h3> </div>
+        <div class="column"> <button onclick="saveSettings(right)" class="littleBtn"> > </button> </div>
+    </div>
+</div>
+</center>
+ 
+
+
+
+         <br><br>
+
+
+                    <button onclick="saveGame();" class="btnTwo"> Save Game </button><br><br><hr><br>
+                    <button onclick="developerOn();" class="btnTwo"> Developer Mode </button><br>(Gives 100B complaints)<br><br>
+                    <button onclick="deleteGame();" class="btnTwo"> Delete Saved Game / Complete Restart </button><br><br>
+
+                    <button onclick="timeAwayClicks();" class="btnTwo"> Test Button </button><br><br>
+                   
+
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="light" class="white_content"> <img src="logo.gif" width="40vw" height="30vh"> <br> <br>You have just been appointed CEO of ISP ONE the world's largest multinational Internet Service Provider. Congratulations! Our public mission statement is to provide afford, reliable, and fast internet service to our loyal customers. Our actual agenda is to summon our lord and saviour Satan and bring on the apocalypse. This can be achieved by causing unnecessary grief and anxiety to people. But not just any grief and anxiety, it must be from people who probably should be a little bit grateful for what they have. You will do this by providing expensive, unreliable, and slow internet service to as many reluctant customers as possible. Your success will be measured through the number of complaints you receive. <br><br>
+        <center> <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><button class="btn">Start Game.</button> </a></center></div>
+        <div id="fade" class="black_overlay"></div>
+
+
+  <div class="achievement" id="achievement">
+
+    <span class="achievementText" id="achievementText">Achievement Unlocked!<br/>
+    <i style="font-size:80%" >Oh Look a Test Achievement!</i></span>
+  
+  </div>
+
+  <div class="achievement" id="achievementBehind">  </div>
+
+
+  
+  
+</body>
+
+
+
+<script src="js/numbro.min.js"></script>
+<!-- <script src="js/numeral.js"></script> -->
+<script src="js/game.js"></script>
+
+</html>
