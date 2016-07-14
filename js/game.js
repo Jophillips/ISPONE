@@ -367,7 +367,6 @@
 
             if (newSoftDataCapCost > hellrequirement) {
                 softDataCapCost = "Too Much";
-                console.log(softDataCapCost);
             }
             else {
                 softDataCapCost = newSoftDataCapCost;
@@ -596,7 +595,7 @@
         localStorage.setItem("savedData", JSON.stringify(savedData));
         formatNumbers();
 
-        console.log("The time is now ... " + Date.now());
+        console.log(`The time is now ${Date.now()} UTC.`);
     }
 
     function developerOn() {
