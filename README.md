@@ -2,11 +2,11 @@
 
 ISP ONE is an increamental game where you play as a CEO of an internet service provider trying to provide the worst possible service to your customers. 
 
-## Getting Started
+## Getting Started.
 
 The entire project is web based simply download the project and open the index.html file. 
 
-### Prerequisities
+### Prerequisities.
 
 Any modern browser with html5 local storage.
 
@@ -18,15 +18,15 @@ Safari: 4.0+
 Opera: 11.5+
 ```
 
-## Built With
+## Built With.
 
 * HTML5, CSS, JS
 
-## Contributing
+## Contributing.
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Authors
+## Authors.
 
 * **Joey Phillips** - *Initial work* - [Jophillips](https://github.com/Jophillips)
 
