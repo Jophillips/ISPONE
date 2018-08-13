@@ -357,7 +357,7 @@ input:checked + label {
     z-index: 1002;
     overflow: auto;
     color: #000;
-    font-size: 1em;
+    font-size: 2em;
     font-style: bold;
     text-align: center;
 }
